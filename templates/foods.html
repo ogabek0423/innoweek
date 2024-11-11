@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kechgi taomlar</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 10px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+
+        }
+        .btn1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+
+        }
+        .myButton {
+            position: fixed;   /* Ekranga bog'lash */
+            bottom: 20px;      /* Ekran pastidan 20px yuqorida */
+            right: 20px;       /* Ekran o'ngidan 20px chapda */
+            padding: 10px 20px;/* Kattalik */
+            background-color: #007bff; /* Tugma rangi */
+            color: white;      /* Matn rangi */
+            border: none;      /* Chegara */
+            border-radius: 5px;/* Yoyilgan burchaklar */
+            cursor: pointer;   /* Kursor ko'rsatkichi */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soyali effekt */
+        }
+
+#myButton:hover {
+    background-color: #0056b3; /* Hover qilinganda rang o'zgarishi */
+}
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center">Kechgi taomlar</h1>
+    <div class="container">
+        {% for food in foods %}
+        <div class="card">
+            <img src="{{ food.image.url }}" alt="{{ food.name }}">
+            <h3>{{ food.name|title }}</h3>
+            <a href="{% url 'food_detail' food.id %}" class="btn">Batafsil ko'rish</a>
+            <br>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+    <a style="margin-right: auto" href="{% url 'index'%}" class="myButton">Orqaga</a>
+</body>
+</html>

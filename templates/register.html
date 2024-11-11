@@ -1,0 +1,32 @@
+<head>
+  <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+
+<div class="login">
+  <div class="login-header">
+    <h1>Register</h1>
+  </div>
+    <div class="login-form">
+        {% csrf_token %}
+        <h3>First name:</h3>
+        <input  id="firstname" name="firstname" type="text" placeholder="Firstname"/><br>
+        <h3>Last name:</h3>
+        <input type="text" id="lastname" name="lastname" placeholder="Lastname"/><br>
+        <h3>Email:</h3>
+        <input type="text" name="email" id="email" placeholder="Email"/><br>
+        <h3>Username:</h3>
+        <input type="text" placeholder="Username"/><br>
+        <h3>Password:</h3>
+        <input type="password" placeholder="Password"/>
+        <br>
+        <input type="button" value="register" class="login-button"/>
+        <br>
+        <a href="{% url 'login' %}" class="sign-up">Sign in!</a>
+        <br>
+        </div>
+  </div>
+  <script src="script.js"></script>
+</body>

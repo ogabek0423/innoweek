@@ -1,0 +1,111 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--<title>Mahsulotlar Ro'yxati</title>-->
+<!--<link rel="stylesheet" href="styles.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <h1 class="title">Muzlatgichdagi Mahsulotlar</h1>-->
+<!--        <ul class="product-list">-->
+<!--            {% for product in products %}-->
+<!--                <li class="product-item">-->
+<!--                    <div style="">-->
+<!--                    <img  height="270" width="480" src="{{ product.image.url }}" alt="{{ product.name }}" class="product-icon">-->
+
+<!--                    </div>-->
+
+<!--                    <div class="product-info">-->
+<!--                        <h3 class="product-name">{{ product.name|title }}</h3>-->
+<!--                        <p class="product-quantity">Qolgan miqdor: {{ product.soni }} {{ product.unit }}</p>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>refrigger</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 10px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+
+        }
+        .btn1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+
+        }
+        .myButton {
+            position: fixed;   /* Ekranga bog'lash */
+            bottom: 20px;      /* Ekran pastidan 20px yuqorida */
+            right: 20px;       /* Ekran o'ngidan 20px chapda */
+            padding: 10px 20px;/* Kattalik */
+            background-color: #007bff; /* Tugma rangi */
+            color: white;      /* Matn rangi */
+            border: none;      /* Chegara */
+            border-radius: 5px;/* Yoyilgan burchaklar */
+            cursor: pointer;   /* Kursor ko'rsatkichi */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soyali effekt */
+        }
+
+#myButton:hover {
+    background-color: #0056b3; /* Hover qilinganda rang o'zgarishi */
+}
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center">Muzlatgichda bor</h1>
+    <div class="container">
+        {% for food in products %}
+        <div class="card">
+            <img src="{{ food.image.url }}" alt="{{ food.name }}">
+            <h3>{{ food.name|title }}</h3>
+            <div class="product-info">
+                        <p class="product-quantity">Qolgan miqdor: {{ food.soni }} {{ food.unit }}</p>
+
+            </div>
+
+            <br>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+    <a style="margin-right: auto" href="{% url 'index'%}" class="myButton">Orqaga</a>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Muzlatgich</title>
+    <style>
+        body {
+            font-family: 'Cambria', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navbar uslubi */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;;
+            color: deepskyblue;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+
+        }
+        .navbar h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+        .navbar .user-icon {
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .user-icon:hover {
+            color: #ecf0f1;
+        }
+        /* Button uslubi */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+        .category-buttons {
+            display: grid;
+            border: black;
+            grid-template-columns: repeat(3, 1fr); /* Ikkita ustun qilish */
+            gap: 20px; /* Buttonlar orasidagi masofa */
+            padding: 20px;
+        }
+
+        .button-link {
+            display: block;
+            width: 350px;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            border: black;
+            color: deepskyblue;
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 150px;
+            text-decoration: none;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soyalar qo'shildi */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button-link:hover {
+            transform: translateY(-5px); /* Hoverda ko'tarilish effekti */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Hoverda soyalar kuchayadi */
+        }
+
+
+    </style>
+</head>
+<body style="background-image:url('static/img.png'); background-repeat: initial; background-position: center;
+        background-size: cover" >
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Smart Refrigerator</h1>
+        <div class="user-icon">&#128100;</div> <!-- User icon -->
+    </div>
+
+    <!-- Buttonlar qismi -->
+    <div class="container">
+       <div class="category-buttons">
+            <a style="background-image: url('static/osh.png')" href="{% url 'food_list'%}" class="button-link">Kechki Ovqat</a>
+            <a style="background-image: url('static/qovurilgant.jpg')" href="{% url 'non_list'%}" class="button-link">Nonushta</a>
+            <a style="background-image: url('static/somsa.png')" href="{% url 'tush_list'%}" class="button-link">Tushlik</a>
+            <a style="background-image: url('static/salat.png')" href="{% url 'salat_list' %}" class="button-link">Salatlar</a>
+            <a style="background-image: url('static/sut.png')" href="{% url 'drink_list'%}" class="button-link">Ichimliklar</a>
+            <a style="background-image: url('static/736_736_95_906361976.jpg')" href="{%url 'products'%}" class="button-link">Mahsulotlar</a>
+
+       </div>
+    </div>
+</body>
+</html>
